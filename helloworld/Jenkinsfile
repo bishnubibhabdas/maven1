@@ -12,5 +12,14 @@ stages {
       '''
        }
      }
+     
+     stage ('QA Stage') {
+         steps {
+             sh '''
+        cd helloworld
+           mvn clean install sonar:sonar
+      '''
+     }
+    }
    }
  }
